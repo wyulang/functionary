@@ -1,7 +1,7 @@
 <template>
   <div class="flex fd-c h-all w-all">
-    <div class="w-all bc-fff ra-4 pl10 pr10 pb10 sha-7">
-      <div class="flex w-all mt10">
+    <div class="w-all bc-fff ra-4 pr10 pb10 sha-7">
+      <div class="flex w-all">
         <div class="flex-1">
           <div class="pt10 flex pb10">
             <el-button @click="btnNewClick()" icon="iconfont icontianjia" size="small">新增</el-button>

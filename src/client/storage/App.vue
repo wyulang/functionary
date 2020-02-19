@@ -52,9 +52,9 @@ export default {
       user: {},
       menu: [
         { title: "库存管理", path: "index", icon: "iconcangkukucunguanli fs-20", index: 0 },
-        { title: "车辆管理", path: "manage-custom", icon: "iconcheliang", index: 1 },
-        { title: "借还管理", path: "manage-custom", icon: "iconshebeijieyong", index: 1 },
-        { title: "用户管理", path: "manage-net", icon: "iconyonghu2", index: 2 },
+        { title: "车辆管理", path: "car", icon: "iconcheliang", index: 1 },
+        { title: "借还管理", path: "borrow", icon: "iconshebeijieyong", index: 1 },
+        { title: "用户管理", path: "user", icon: "iconyonghu2", index: 2 },
       ]
     }
   },

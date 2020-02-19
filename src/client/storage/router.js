@@ -10,7 +10,40 @@ const routers = [
     component: () => import(/* webpackChunkName: "exam" */ './pages/index.vue'),
     meta: {
       index: 0,
-      title: '智能存储柜后台管理',
+      title: '库存管理',
+      isHeader: 1,
+      isFooter: 1,
+    }
+  },
+  {
+    path: '/car',
+    name: "car",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/car.vue'),
+    meta: {
+      index: 0,
+      title: '车辆管理',
+      isHeader: 1,
+      isFooter: 1,
+    }
+  },
+  {
+    path: '/user',
+    name: "user",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/user.vue'),
+    meta: {
+      index: 0,
+      title: '车辆管理',
+      isHeader: 1,
+      isFooter: 1,
+    }
+  },
+  {
+    path: '/borrow',
+    name: "borrow",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/borrow.vue'),
+    meta: {
+      index: 0,
+      title: '借还管理',
       isHeader: 1,
       isFooter: 1,
     }
