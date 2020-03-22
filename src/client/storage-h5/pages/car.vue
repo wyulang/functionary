@@ -1,6 +1,6 @@
 <template>
-  <div class="w-all backbg">
-    <div class="flex jc-c ai-c pt20">
+  <div class="w-all mapHeight flex fd-c">
+    <div class="flex jc-c backbg ai-c pt20">
       <div>
         <img class="w-80 b-f h-80 ra-100" src="../assets/head.png" alt />
       </div>
@@ -10,28 +10,8 @@
         <span class="fs-13 mt10">部门：新闻中心</span>
       </div>
     </div>
-
-    <div class="bc-fff ra-5 pl15 pr15 pt20 mt10 ml10 mr10">
-      <div class="w-all flex jc-b fw">
-        <div v-for="(item, index) in menu" :key="index" class="wb-22 ai-c flex fd-c mb20">
-          <img class="w-60 h-60 mb5" :src="item.pic" alt />
-          <span class="fs-13">{{item.title}}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="w-all pt30 bc-f2 jc-c pb40 flex ai-c">
-      <div class="rel">
-        <img class="ra-100 w-160 h-160" src="../assets/open.png" alt />
-        <div style="top:35%" class="abs fc-fff center abst absl">
-          <span>一键开柜</span>
-          <span class="fs-12 pt6">{{currData}}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="fixed ar5 ab100">
-      <img class="w-37 h-37" src="../assets/tel.png" alt />
+    <div class="flex-1 h-all w-all">
+      <div id="container" ref="container" class="w-all h-all"></div>
     </div>
   </div>
 </template>
@@ -55,20 +35,40 @@ export default {
       ]
     };
   },
-  mounted() {
-    dd.runtime.permission.requestAuthCode({
-      corpId: "dinge1d38f3c65939f9435c2f4657eb6378f",
-      onSuccess: function(result) {
-        alert(JSON.stringify(result)); //将code 发往后台处理
-      },
-      onFail: function(err) {
-        alert("出错了, " + err);
-      }
-    });
-
-    // console.log("tag", dd);
-  },
   methods: {},
+  mounted() {
+    this.$nextTick(res => {
+      var map = new AMap.Map("container");
+      map.setZoom(15);
+      map.plugin(["AMap.Scale"], function() {
+        var scale = new AMap.Scale({});
+        map.addControl(scale);
+      });
+
+      map.plugin("AMap.Geolocation", function() {
+        var geolocation = new AMap.Geolocation({
+          enableHighAccuracy: true, // 是否使用高精度定位，默认：true
+          convert: true,
+          showMarker: true,
+          panToLocation: true,
+          timeout: 10000
+        });
+
+        geolocation.getCurrentPosition();
+        map.addControl(geolocation);
+        AMap.event.addListener(geolocation, "complete", onComplete);
+        AMap.event.addListener(geolocation, "error", onError);
+
+        function onComplete(data) {
+          // data是具体的定位信息
+        }
+
+        function onError(data) {
+          // 定位出错
+        }
+      });
+    });
+  },
   created() {
     this.currData = formatDate(new Date(), "YY.MM.DD");
   }
@@ -76,9 +76,14 @@ export default {
 </script>
 
 <style lang='less' scoped>
+@car:50/@bs;
+.mapHeight{
+  height: calc(100vh - @car);
+}
 .backbg {
-  min-height: 500px;
+  height: 140px;
   background: url("../assets/bg.png") no-repeat;
   background-size: 100% auto;
 }
 </style>
+ 
