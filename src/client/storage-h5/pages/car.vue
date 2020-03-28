@@ -80,10 +80,6 @@ export default {
 .mapHeight{
   height: calc(100vh - @car);
 }
-.backbg {
-  height: 140px;
-  background: url("../assets/bg.png") no-repeat;
-  background-size: 100% auto;
-}
+
 </style>
  

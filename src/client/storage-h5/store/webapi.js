@@ -19,43 +19,14 @@ class webapi extends baseApi {
   }
 
   envUrl = {
-    me: 'http://api.zytest.86edu.net',
-    inte: 'http://api.zytest.86edu.net',
-    prod: 'https://api.zy.86edu.net',
+    me: 'http://183.131.146.66:29080',
+    inte: 'http://183.131.146.66:29080',
+    prod: 'http://183.131.146.66:29080',
   };
 
-  joyred = {
-    me: 'https://gaokaoquerytest.joyread.com.cn',
-    inte: 'https://gaokaoquerytest.joyread.com.cn',
-    prod: 'https://gaokaoquerytest.joyread.com.cn',
-  }
-
-  payUrl = {
-    me: 'http://m.zy.86edu.net',
-    inte: 'http://m.zy.86edu.net',
-    prod: 'https://mzy.86edu.net',
-  }
-
-  loginServer = {
-    me: 'http://api.zytest.86edu.net/api/app/person/info',
-    inte: 'http://api.zytest.86edu.net/api/app/person/info',
-    prod: 'https://api.zy.86edu.net/api/app/person/info',
-  }
 
   getDomainApi(type) {
     return this.env('envUrl')
-  }
-
-  contentType(type) {
-    if (type == 'json') {
-      return "application/json"
-    } else {
-      return "application/x-www-form-urlencoded; charset=UTF-8"
-    }
-  }
-
-  setToken() {
-    return { accesstoken: (this.storage('accesstoken') || 'SUPER_ADMIN_TOKEN_FOR_GAOKAO') }
   }
 
 }

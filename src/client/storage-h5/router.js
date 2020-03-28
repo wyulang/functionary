@@ -24,6 +24,66 @@ const routers = [
       isFooter: 2,
     }
   },
+  {
+    path: '/appliy',
+    name: "appliy",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/apply.vue'),
+    meta: {
+      index: 0,
+      title: '设备申请',
+      isFooter: 0,
+    }
+  },
+  {
+    path: '/borrow',
+    name: "borrow",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/borrow.vue'),
+    meta: {
+      index: 0,
+      title: '设备借用',
+      isFooter: 0,
+    }
+  },
+  {
+    path: '/zgsq',
+    name: "zgsq",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/zgsq.vue'),
+    meta: {
+      index: 0,
+      title: '智柜申请',
+      isFooter: 0,
+    }
+  },
+  {
+    path: '/zgjy',
+    name: "zgjy",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/zgjy.vue'),
+    meta: {
+      index: 0,
+      title: '智柜借用',
+      isFooter: 0,
+    }
+  },
+  {
+    path: '/servicing',
+    name: "servicing",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/servicing.vue'),
+    meta: {
+      index: 0,
+      title: '设备维修申请',
+      isFooter: 0,
+    }
+  },
+  {
+    path: '/inquiry',
+    name: "inquiry",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/inquiry.vue'),
+    meta: {
+      index: 0,
+      title: '设备保修查询',
+      isFooter: 0,
+    }
+  },
 ]
 
 const routerDefaut = new Router({
