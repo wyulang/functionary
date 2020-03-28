@@ -84,6 +84,16 @@ const routers = [
       isFooter: 0,
     }
   },
+  {
+    path: '/test',
+    name: "test",
+    component: () => import(/* webpackChunkName: "exam" */ './pages/test.vue'),
+    meta: {
+      index: 0,
+      title: '设备保修查询',
+      isFooter: 0,
+    }
+  },
 ]
 
 const routerDefaut = new Router({

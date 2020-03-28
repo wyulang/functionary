@@ -81,8 +81,8 @@ export default {
           pic: require("../assets/menu-6.png"),
           url: "inquiry"
         },
-        { title: "", pic: "" },
-        { title: "", pic: "" }
+        { title: "", pic: "" ,url:'test'},
+        { title: "", pic: "" ,url:'test'}
       ]
     };
   },
