@@ -1,9 +1,8 @@
 <template>
-  <div class="w-all hi-200 backbg">
-    <div class="pt20">
+  <div class="w-all mapHeight backbg">
+    <div class=" pt20">
      <userinfo></userinfo>
     </div>
-
     <div class="bc-fff ra-5 pl15 pr15 pt20 mt10 ml10 mr10">
       <div class="w-all flex jc-b fw">
         <div
@@ -89,6 +88,10 @@ export default {
 </script>
 
 <style lang='less' scoped>
+@car: 50 / @bs;
+.mapHeight {
+  height: calc(100vh - @car);
+}
 .backbg {
   background: url("../assets/bg.png") no-repeat;
   background-size: 100% auto;
