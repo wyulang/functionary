@@ -1,14 +1,7 @@
 <template>
   <div class="w-all">
-    <div class="flex jc-c backbg ai-c pt20">
-      <div>
-        <img class="w-80 b-f h-80 ra-100" src="../assets/head.png" alt />
-      </div>
-      <div class="flex fd-c fc-fff ml20">
-        <div class="fs-18">无情.海</div>
-        <span class="fs-13 mt10">职务：记者</span>
-        <span class="fs-13 mt10">部门：新闻中心</span>
-      </div>
+    <div class="topbg pt20">
+      <userinfo></userinfo>
     </div>
 
     <div class="flex w-all bc-fff pt20 pb20 jc-c">

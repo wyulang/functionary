@@ -8,24 +8,24 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     isFooter: 0,
-    userinfo:{}
+    userinfo: {}
   },
   actions: {
-    getAuthCode(e,data){
-     return  api.get('/api/device/dingding/acctoken',data)
+    getAuthCode(e, data) {
+      return api.get('/api/device/dingding/acctoken', data)
     },
-    getUerInfo(e,data){
-     return e.dispatch('getAuthCode',{}).then(res=>{
-        if(res.code==0){
-          let sql=Object.assign({},data,{acctoken:res.data.acctoekn,tenant:"0000"});
-          return api.get('/api/device/dingding/userInfo',sql)
-        }else{
-          return res
+    getUerInfo(e, data) {
+      let sql = Object.assign({}, data, { tenant: "0000" });
+      return api.get('/api/device/dingding/userInfo', sql).then(dal => {
+        if (dal.code == 0) {
+          api.storage('userinfo', dal.data);
+          e.state.userinfo = dal.data;
         }
+        return dal;
       })
     },
-    getzglist(e,data){
-      return new Promise((succ,erro)=>{
+    getzglist(e, data) {
+      return new Promise((succ, erro) => {
         succ(zgsh)
       })
     }

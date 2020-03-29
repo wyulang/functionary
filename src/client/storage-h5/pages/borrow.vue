@@ -7,14 +7,7 @@
     </div>
 
     <div class="flex jc-c head ml10 mr10 ai-c pp10 ra-7">
-      <div>
-        <img class="w-80 b-f h-80 ra-100" src="../assets/head.png" alt />
-      </div>
-      <div class="flex fd-c fc-fff ml20">
-        <div class="fs-18">无情.海</div>
-        <span class="fs-13 mt10">职务：记者</span>
-        <span class="fs-13 mt10">部门：新闻中心</span>
-      </div>
+     <userinfo></userinfo>
     </div>
 
     <div class="w-all flex ai-c jc-c">

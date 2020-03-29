@@ -11,13 +11,16 @@ export default {
       userinfo:{}
     }
   },
+  methods:{
+    ...mapActions(["getUerInfo"]),
+  },
   created(){
     this.$nextTick(res => {
       dd.runtime.permission.requestAuthCode({
         corpId: "dinge1d38f3c65939f9435c2f4657eb6378f",
         onSuccess: (res)=> {
           this.getUerInfo({code:res.code}).then(val=>{
-            this.userinfo=JSON.stringify(Object.assign({},{code:val.data},{code:res.code}));
+            this.userinfo=JSON.stringify(Object.assign({},{code:res.code},{request:val}));
           });
         },
         onFail: function(err) {

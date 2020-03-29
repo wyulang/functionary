@@ -1,14 +1,7 @@
 <template>
   <div class="w-all mapHeight flex fd-c">
-    <div class="flex jc-c backbg ai-c pt20">
-      <div>
-        <img class="w-80 b-f h-80 ra-100" src="../assets/head.png" alt />
-      </div>
-      <div class="flex fd-c fc-fff ml20">
-        <div class="fs-18">无情.海</div>
-        <span class="fs-13 mt10">职务：记者</span>
-        <span class="fs-13 mt10">部门：新闻中心</span>
-      </div>
+    <div class="topbg pt20">
+      <userinfo></userinfo>
     </div>
     <div class="flex-1 h-all w-all">
       <div id="container" ref="container" class="w-all h-all"></div>
@@ -18,21 +11,12 @@
 
 <script>
 import { formatDate } from "lib/dateformat";
+import { mapState } from "vuex";
 export default {
   data() {
     return {
       value1: "",
-      currData: "",
-      menu: [
-        { title: "设备申请", pic: require("../assets/menu-1.png") },
-        { title: "智柜申请", pic: require("../assets/menu-2.png") },
-        { title: "设备借用", pic: require("../assets/menu-3.png") },
-        { title: "智柜借用", pic: require("../assets/menu-4.png") },
-        { title: "设备维修", pic: require("../assets/menu-5.png") },
-        { title: "保修查询", pic: require("../assets/menu-6.png") },
-        { title: "", pic: "" },
-        { title: "", pic: "" }
-      ]
+      currData: ""
     };
   },
   methods: {},
@@ -76,10 +60,9 @@ export default {
 </script>
 
 <style lang='less' scoped>
-@car:50/@bs;
-.mapHeight{
+@car: 50 / @bs;
+.mapHeight {
   height: calc(100vh - @car);
 }
-
 </style>
  

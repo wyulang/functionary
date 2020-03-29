@@ -1,5 +1,9 @@
 import Loading from 'vue-loading-new';
+import userinfo from './components/userinfo.vue';
 export default {
+  components:{
+    userinfo
+  },
   data() {
     return {
       loadingInstance: null,

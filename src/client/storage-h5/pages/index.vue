@@ -1,14 +1,7 @@
 <template>
   <div class="w-all hi-200 backbg">
-    <div class="flex jc-c ai-c pt20">
-      <div>
-        <img class="w-80 b-f h-80 ra-100" src="../assets/head.png" alt />
-      </div>
-      <div class="flex fd-c fc-fff ml20">
-        <div class="fs-18">无情.海</div>
-        <span class="fs-13 mt10">职务：记者</span>
-        <span class="fs-13 mt10">部门：新闻中心</span>
-      </div>
+    <div class="pt20">
+     <userinfo></userinfo>
     </div>
 
     <div class="bc-fff ra-5 pl15 pr15 pt20 mt10 ml10 mr10">
@@ -19,7 +12,7 @@
           :key="index"
           class="wb-22 ai-c flex fd-c mb20"
         >
-          <img v-if="item.pic" class="w-60 h-60 mb5" :src="item.pic" alt />
+          <img v-if="item.pic" class="w-40 h-40 mb5" :src="item.pic" alt />
           <span class="fs-13">{{item.title}}</span>
         </div>
       </div>
@@ -43,7 +36,7 @@
 
 <script>
 import { formatDate } from "lib/dateformat";
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   data() {
     return {
@@ -86,20 +79,11 @@ export default {
       ]
     };
   },
-  mounted() {
-    // console.log("tag", dd);
-  },
   methods: {
-    ...mapActions(["getAuthCode"]),
-    initData() {
-      this.getAuthCode().then(res => {
-        // alert(JSON.stringify(res))
-      });
-    }
+
   },
   created() {
     this.currData = formatDate(new Date(), "YY.MM.DD");
-    this.initData();
   }
 };
 </script>
