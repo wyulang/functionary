@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'mb50':isFooter}" class="w-all bc-f2">
+  <div :class="{'mb50':isFooter}" class="w-all bc-t">
     <router-view class="fs-16 bc-f2 hi-all"></router-view>
     <footer v-if="isFooter" class="fixed ab0 al0 jc-c w-all bc-fff flex h-50 ai-c">
       <div class="flex w-all jc-c fc-999 ai-c">
@@ -52,7 +52,7 @@ html {
 }
 .backbg {
   min-height: 140 / @bs;
-  background: url("./assets/bg.png") no-repeat;
+  background:#f2f2f2 url("./assets/bg.png") no-repeat;
   background-size: 100% auto;
 }
 .topbg {
