@@ -23,7 +23,7 @@
         <span class="fs-12 pt6">{{currData}}</span>
       </div>
     </div>
-    <div class="w-all flex h-30 bc-t bc-f2 jc-c ai-c">
+    <div class="w-all fixed ab60 al0 w-all flex h-30 bc-t bc-f2 jc-c ai-c">
       <img class="w-16 h-16" src="../assets/tip.png" alt />
       <span class="fs-12 ml5 fc-999">未申领智柜，暂时无法打开，请先申请智柜</span>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="flex jc-c ai-c">
     <div>
-      <img class="w-80 b-f h-80 ra-100" :src="user.avatar" alt />
+      <img class="w-80 b-f h-80 ra-100" :src="user.avatar || require('../assets/head.png')" alt />
     </div>
     <div class="flex fd-c fc-fff ml20">
       <div class="fs-18">{{user.name}}</div>
